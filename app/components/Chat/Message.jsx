@@ -1,6 +1,8 @@
 var React = require('react');
 var moment = require('moment')
 
+var TIMESTAMP_REFRESH = 30 * 1000; // 30 seconds
+
 class ChatMessage extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +11,7 @@ class ChatMessage extends React.Component {
       fromNowDate: this.props.date.fromNow()
     }
 
-    setInterval(this.updateDate.bind(this), 5000);
+    setInterval(this.updateDate.bind(this), TIMESTAMP_REFRESH);
   }
 
   updateDate() {

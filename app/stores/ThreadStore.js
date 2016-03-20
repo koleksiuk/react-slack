@@ -1,11 +1,12 @@
 var Reflux = require('reflux');
 var ThreadActions = require('../actions/ThreadActions.js');
 var Message = require('../models/Message.js');
+var moment = require("moment") // remove when default is removed
 
 var defaultMessages = [
-  new Message({ user: { name: "Konrad" }, body: "Cześć", timestamp: 1458422394000 }),
-  new Message({ user: { name: "Janek" }, body: "Cześć", timestamp: 1458422594000 }),
-  new Message({ user: { name: "Konrad" }, body: "Co tam?", timestamp: 1458423394000 })
+  new Message({ user: { name: "Konrad" }, body: "Cześć", timestamp: Number(moment().subtract(2, "minutes"))  }),
+  new Message({ user: { name: "Janek" }, body: "Cześć", timestamp: Number(moment().subtract(40, "seconds"))}),
+  new Message({ user: { name: "Konrad" }, body: "Co tam?", timestamp: Number(moment().subtract(10, "seconds"))})
 ]
 
 var ThreadStore = Reflux.createStore({
