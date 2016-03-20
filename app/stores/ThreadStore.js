@@ -1,31 +1,27 @@
 var Reflux = require('reflux');
 var ThreadActions = require('../actions/ThreadActions.js');
+var Message = require('../models/Message.js');
 
 var defaultMessages = [
-  { id: 1, authorName: "Konrad", body: "Cześć!" },
-  { id: 2, authorName: "Janek", body: "Cześć Konrad! Jak tam?" },
-  { id: 3, authorName: "Konrad", body: "A dobrze." }
+  new Message({ user: { name: "Konrad" }, body: "Cześć", timestamp: 1458422394000 }),
+  new Message({ user: { name: "Janek" }, body: "Cześć", timestamp: 1458422594000 }),
+  new Message({ user: { name: "Konrad" }, body: "Co tam?", timestamp: 1458423394000 })
 ]
 
 var ThreadStore = Reflux.createStore({
   listenables: [ThreadActions],
 
-  onAddMessage: function(authorName, body) {
-    var nextId = this.messages[this.messages.length - 1].id + 1;
-
+  onAddMessage: function(user, body) {
     var newMessages = this.messages.concat(
-      { id: nextId, authorName: authorName, body: body }
+      new Message({user: { name: "Anon" }, body: body})
     );
 
-    console.log(newMessages);
     this.trigger(newMessages);
 
     this.messages = newMessages;
   },
 
   getInitialState: function() {
-    console.log("loaded");
-
     if (!this.messages) {
       this.messages = defaultMessages;
     }

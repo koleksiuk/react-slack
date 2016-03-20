@@ -7,6 +7,8 @@ var DiscussionInfo = require('./DiscussionInfo.jsx');
 
 var ThreadStore = require('../../stores/ThreadStore.js');
 
+var Message = require("../../models/Message.js");
+
 var ChatWindow = React.createClass({
   mixins: [Reflux.connect(ThreadStore, "messages")],
 

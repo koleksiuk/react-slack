@@ -1,10 +1,10 @@
 var React = require('react');
 var ChatMessage = require('./Message.jsx');
-
+var Message = require('../../models/Message.js');
 
 class ChatContainer extends React.Component {
   renderItem(message) {
-    return <ChatMessage key={message.id} {...message} />
+    return <ChatMessage key={message.id} body={message.body} date={message.getDate()} userName={message.user.name} id={message.id} />
   }
 
   render() {
