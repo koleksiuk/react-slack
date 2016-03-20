@@ -1,6 +1,5 @@
 var React = require('react');
 var ChatMessage = require('./Message.jsx');
-var { Messages } = require('../../stores/MessageStore.js');
 
 
 class ChatContainer extends React.Component {
@@ -12,11 +11,15 @@ class ChatContainer extends React.Component {
     return <div className="row">
       <div className="col-md-12">
         <ul className="chat-messages">
-          {Messages.map(this.renderItem.bind(this))}
+          {this.props.messages.map(this.renderItem.bind(this))}
         </ul>
       </div>
     </div>
   }
+}
+
+ChatContainer.propTypes = {
+  messages: React.PropTypes.array.isRequired
 }
 
 module.exports = ChatContainer
