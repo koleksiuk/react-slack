@@ -7,13 +7,11 @@ class Main extends React.Component {
   render() {
     return (
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-3">
-              <Sidebar />
-            </div>
-            <div className="col-md-9">
-              <ChatWindow />
-            </div>
+          <div className="col-md-2 row sidebar-container">
+            <Sidebar />
+          </div>
+          <div className="col-md-10">
+            <ChatWindow />
           </div>
         </div>
     )
