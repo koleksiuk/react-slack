@@ -1,3 +1,12 @@
-.sidebar {
-  background: beige;
+html, body, #app, #app > .container-fluid
+{
+  height: 100%;
+}
+
+.sidebar-container, .sidebar {
+  height: 100%;
+}
+
+.sidebar-container {
+  border-right: 1px solid black;
 }
