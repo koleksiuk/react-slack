@@ -8,5 +8,52 @@ html, body, #app, #app > .container-fluid
 }
 
 .sidebar-container {
+  box-sizing: border-box;
   border-right: 1px solid black;
+}
+
+.sidebar-list .panel {
+  border-radius: 0;
+}
+
+.chat-container, .chat-window {
+  height: 100%;
+}
+
+.chat-window {
+  position: relative;
+  min-height: 100%;
+}
+
+.chat-messages {
+  list-style: none;
+}
+
+.chat-messages li {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background: #f5f5f5;
+}
+
+.chat-messages .message-author {
+  font-size: 0.8em;
+  color: #bbb;
+}
+
+.message-form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  padding: 10px;
+
+  border-top: 1px solid #eee;
+}
+
+.discussion-info {
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  padding: 10px 10px 11px 10px;
 }
