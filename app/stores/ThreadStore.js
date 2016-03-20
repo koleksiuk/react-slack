@@ -12,9 +12,9 @@ var defaultMessages = [
 var ThreadStore = Reflux.createStore({
   listenables: [ThreadActions],
 
-  onAddMessage: function(user, body) {
+  onAddMessage: function({userName, body} = {}) {
     var newMessages = this.messages.concat(
-      new Message({user: { name: "Anon" }, body: body})
+      new Message({user: { name: userName }, body: body})
     );
 
     this.trigger(newMessages);

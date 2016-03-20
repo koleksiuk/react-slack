@@ -4,8 +4,6 @@ var ThreadActions = require('../../actions/ThreadActions.js');
 
 class ChatForm extends React.Component {
   handleValueChange(evt) {
-    evt.preventDefault();
-
     if (evt.which === 27) {
       // hit escape, clear without creating
       this.refs.textMessage.value = "";
@@ -13,14 +11,15 @@ class ChatForm extends React.Component {
   }
 
 
-  handleSubmit(evt) {
-    if(evt) { evt.preventDefault() }
+  handleSubmit(e) {
+    e.preventDefault();
 
     var textMessage = this.refs.textMessage;
+
     var text = textMessage.value;
 
     if (text && text != "") {
-      ThreadActions.addMessage("Anon", text);
+      ThreadActions.addMessage({ userName: "Anon", body: text });
       textMessage.value = "";
     }
   }
