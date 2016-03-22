@@ -5,7 +5,7 @@ var ChatForm = require('./Form.jsx');
 var ChatContainer = require('./Container.jsx');
 var DiscussionInfo = require('./DiscussionInfo.jsx');
 
-var ThreadStore = require('../../stores/ThreadStore.js');
+var ThreadStore = require('../../stores/ThreadStore.jsx');
 
 var Message = require("../../models/Message.js");
 

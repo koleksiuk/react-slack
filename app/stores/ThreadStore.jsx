@@ -1,5 +1,5 @@
 var Reflux = require('reflux');
-var ThreadActions = require('../actions/ThreadActions.js');
+var ThreadActions = require('../actions/ThreadActions.jsx');
 var Message = require('../models/Message.js');
 var moment = require("moment") // remove when default is removed
 

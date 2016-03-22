@@ -1,5 +1,5 @@
 var React = require('react');
-var SidebarItemContainer = require('./SidebarItemContainer.jsx');
+var SidebarItemContainer = require('./ItemContainer.jsx');
 
 class SidebarList extends React.Component {
   renderItem(discussion, index) {

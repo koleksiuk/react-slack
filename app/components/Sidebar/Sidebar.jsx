@@ -1,5 +1,6 @@
 var React = require('react');
-var SidebarList = require('./SidebarList.jsx');
+var SidebarList = require('./List.jsx');
+var ChatStore = require('../../stores/ChatStore.jsx');
 
 var PEOPLE = [
   { id: 1, name: "Janek"},

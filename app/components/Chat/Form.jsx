@@ -1,6 +1,6 @@
 var React = require('react');
 
-var ThreadActions = require('../../actions/ThreadActions.js');
+var ThreadActions = require('../../actions/ThreadActions.jsx');
 
 class ChatForm extends React.Component {
   handleValueChange(evt) {
@@ -9,7 +9,6 @@ class ChatForm extends React.Component {
       this.refs.textMessage.value = "";
     }
   }
-
 
   handleSubmit(e) {
     e.preventDefault();
