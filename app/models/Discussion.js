@@ -1,4 +1,4 @@
-var UserStore = require('../store/UserStore.jsx');
+var UserStore = require('../stores/UserStore.js');
 
 class Discussion {
   constructor({ userIds, id } = {}) {

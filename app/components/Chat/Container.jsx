@@ -1,6 +1,6 @@
 var React = require('react');
 var ChatMessage = require('./Message.jsx');
-var Message = require('../../models/Message.jsx');
+var Message = require('../../models/Message.js');
 
 class ChatContainer extends React.Component {
   renderItem(message) {

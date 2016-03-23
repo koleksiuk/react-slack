@@ -5,7 +5,6 @@ class User {
   }
 
   getDiscussions() {
-    // TODO: IMPLEMENT
   }
 }
 

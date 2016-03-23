@@ -1,13 +1,12 @@
 var moment = require('moment');
 
 class Message {
-  constructor({ discussionId, userId, body, id, timestamp } = {}) {
+  constructor({ user, body, id, timestamp } = {}) {
     this.timestamp = timestamp || Number(new Date());
     this.id = id || this.timestamp;
-    this.discussionId = discussionId;
-    this.userId = userId;
+    this.user = user;
     this.body = body;
-    console.log([ this.discussionId, this.userId, this.body, this.id, this.timestamp ]);
+    console.log([ this.user.name, this.body, this.id, this.timestamp ]);
   }
 
   setTimestamp(timestamp) {
@@ -16,10 +15,6 @@ class Message {
 
   setId(id) {
     this.id = id;
-  }
-
-  getUser() {
-    // TODO: IMPLEMENT
   }
 
   getDiscussion() {

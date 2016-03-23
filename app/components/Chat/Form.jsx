@@ -1,6 +1,6 @@
 var React = require('react');
 
-var ThreadActions = require('../../actions/ThreadActions.jsx');
+var ThreadActions = require('../../actions/ThreadActions.js');
 
 class ChatForm extends React.Component {
   handleValueChange(evt) {

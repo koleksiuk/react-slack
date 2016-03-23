@@ -1,7 +1,7 @@
 var Reflux = require('reflux');
 
 var ThreadActions = Reflux.createActions([
-  "addMessage"
+  "addMessage" // {userId, body}
 ]);
 
 module.exports = ThreadActions
