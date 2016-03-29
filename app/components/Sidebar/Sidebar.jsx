@@ -13,7 +13,6 @@ var Sidebar = React.createClass({
   render: function() {
     return (
       <div className="row sidebar">
-        <SidebarList title="People" discussions={this.state.people} />
         <SidebarList title="Groups" discussions={this.state.chat.discussions} />
       </div>
     )

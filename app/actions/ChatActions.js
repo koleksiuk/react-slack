@@ -1,7 +1,7 @@
 var Reflux = require('reflux');
 
 var ChatActions = Reflux.createActions([
-  "switchDiscussion"
+  "switchDiscussion" // {discussionId}
 ]);
 
 module.exports = ChatActions

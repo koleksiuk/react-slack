@@ -17,10 +17,6 @@ class Message {
     this.id = id;
   }
 
-  getDiscussion() {
-    // TODO: IMPLEMENT
-  }
-
   getDate() {
     return moment(this.timestamp);
   }

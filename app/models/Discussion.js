@@ -1,10 +1,10 @@
 var UserStore = require('../stores/UserStore.js');
 
 class Discussion {
-  constructor({ userIds, id } = {}) {
+  constructor({ userIds, id, name = '' } = {}) {
     this.id = id;
     this.userIds = userIds;
-    console.log([ this.userIds, this.id ]);
+    this.name = name;
   }
 
   getMessages() {

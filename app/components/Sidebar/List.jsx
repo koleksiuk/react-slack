@@ -1,5 +1,6 @@
 var React = require('react');
 var SidebarItemContainer = require('./ItemContainer.jsx');
+var Discussion = require('../../models/Discussion.js');
 
 class SidebarList extends React.Component {
   renderItem(discussion, index) {
@@ -26,7 +27,7 @@ class SidebarList extends React.Component {
 
 SidebarList.propTypes = {
   title: React.PropTypes.string.isRequired,
-  discussions: React.PropTypes.array.isRequired
+  discussions: React.PropTypes.arrayOf(React.PropTypes.instanceOf(Discussion))
 };
 
 SidebarList.defaultProps = {

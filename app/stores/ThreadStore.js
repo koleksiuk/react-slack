@@ -9,24 +9,25 @@ var ThreadStore = Reflux.createStore({
   listenables: [ThreadActions, ChatActions],
 
   messages: [],
-  dao: null,
+  messagesDao: null,
 
   onAddMessage: function({userId, body} = {}) {
-    this.dao.create(userId, body);
+    this.messagesDao.create(userId, body);
 
     this._fetchMessages();
   },
 
   onSwitchDiscussion: function(discussionId) {
-    this.dao.setDiscussionId(discussionId);
+    console.log("ThreadStore - onSwitchDiscussion:" + discussionId);
+    this.messagesDao.setDiscussionId(discussionId);
 
     this._fetchMessages();
   },
 
   getInitialState: function() {
-    if (!this.dao) {
-      this.dao = new MessagesDAO(1);
-      this.dao.setDiscussionId(1);
+    if (!this.messagesDao) {
+      this.messagesDao = new MessagesDAO(1);
+      this.messagesDao.setDiscussionId(1);
     }
 
     this._fetchMessages();
@@ -40,7 +41,7 @@ var ThreadStore = Reflux.createStore({
       this.trigger(messages);
     };
 
-    this.dao.fetch().then(onMessagesFetched.bind(this));
+    this.messagesDao.fetch().then(onMessagesFetched.bind(this));
   }
 })
 

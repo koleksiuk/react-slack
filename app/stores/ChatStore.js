@@ -10,12 +10,10 @@ var DISCUSSIONS = [
 var ChatStore = Reflux.createStore({
   listenables: [ChatActions],
 
-  onSwitchDiscussion: function(discussion) {
-    this.currentDiscussion = discussion;
-  },
-
-  getDiscussions: function() {
-    return this.discussions;
+  onSwitchDiscussion: function(discussionId) {
+    console.log("Chat store - onSwitchDiscussion:" + discussionId);
+    this.currentDiscussion = DISCUSSIONS.filter(function(discussion) { return discussion.id == discussionId})[0]; //TODO: Extract to DAO
+    this.trigger({ discussions: this.discussions, currentDiscussion: this.currentDiscussion });
   },
 
   getInitialState: function() {
