@@ -8,11 +8,11 @@ class Discussion {
   }
 
   getMessages() {
-    MessageStore.getMessageByIds(this.id)
+    //MessageStore.getMessageByIds(this.id)
   }
 
   getUsers() {
-    UserStore.getUsersByIds(this.userIds)
+    //UserStore.getUsersByIds(this.userIds)
   }
 }
 
