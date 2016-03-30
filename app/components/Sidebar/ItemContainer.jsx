@@ -4,7 +4,11 @@ var Discussion = require('../../models/Discussion.js');
 
 class SidebarItemContainer extends React.Component {
   onSwitchDiscussion() {
-    this.props.onSwitchDiscussion(this.props.discussion.id);
+    if(this.props.currentDiscussion.id == this.props.discussion.id) {
+      console.log("Same discussion selected, skipping...");
+    } else {
+      this.props.onSwitchDiscussion(this.props.discussion.id);
+    }
   }
 
   render() {
