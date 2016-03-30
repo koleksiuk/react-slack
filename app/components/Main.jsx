@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDom = require('react-dom');
-var Sidebar = require('./Sidebar.jsx');
+var Sidebar = require('./Sidebar/Sidebar.jsx');
 var ChatWindow = require('./Chat/Window.jsx');
 
 class Main extends React.Component {

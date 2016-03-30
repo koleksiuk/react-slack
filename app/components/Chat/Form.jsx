@@ -10,7 +10,6 @@ class ChatForm extends React.Component {
     }
   }
 
-
   handleSubmit(e) {
     e.preventDefault();
 

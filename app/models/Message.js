@@ -6,7 +6,7 @@ class Message {
     this.id = id || this.timestamp;
     this.user = user;
     this.body = body;
-    console.log([ this.user, this.body, this.id, this.timestamp ]);
+    console.log([ this.user.name, this.body, this.id, this.timestamp ]);
   }
 
   setTimestamp(timestamp) {
