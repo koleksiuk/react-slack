@@ -4,9 +4,12 @@ var Discussion = require('../../models/Discussion.js');
 
 class SidebarList extends React.Component {
   renderItem(discussion, index) {
-    return (
-      <SidebarItemContainer discussion={discussion} key={index} />
-    )
+    return <SidebarItemContainer
+      discussion={discussion}
+      onSwitchDiscussion={this.props.onSwitchDiscussion}
+      currentDiscussion={this.props.currentDiscussion}
+      key={index}
+    />
   }
 
   render() {
@@ -27,7 +30,9 @@ class SidebarList extends React.Component {
 
 SidebarList.propTypes = {
   title: React.PropTypes.string.isRequired,
-  discussions: React.PropTypes.arrayOf(React.PropTypes.instanceOf(Discussion))
+  discussions: React.PropTypes.arrayOf(React.PropTypes.instanceOf(Discussion)),
+  currentDiscussion: React.PropTypes.instanceOf(Discussion).isRequired,
+  onSwitchDiscussion: React.PropTypes.func.isRequired
 };
 
 SidebarList.defaultProps = {
